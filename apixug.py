@@ -35,9 +35,10 @@ class SecureAPIClient:
         url = f"{self.html_url}?view_apis=true&auth={token}"
 
         headers = {
-            'User-Agent': 'SecureClient',
-            'X-API-Key': 'XUGKEYPRO',
-            'Referer': 'https://xindex.netlify.app'
+        "yt-dlp",
+        "--add-header", "Referer: https://appx-play.akamai.net.in/",
+        "--add-header", "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+
         }
 
         try:
