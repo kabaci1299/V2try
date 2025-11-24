@@ -1,5 +1,5 @@
 # ✅ Base image: Best stable Python version
-FROM python:3.10.13-slim
+FROM python:3.13.0
 
 # ✅ Set working directory
 WORKDIR /app
@@ -34,3 +34,4 @@ RUN pip install --no-cache-dir -U pyrogram==2.0.106 tgcrypto==1.2.5
 
 # ✅ Final command: start Flask + Bot together
 CMD ["sh", "-c", "gunicorn app:app & python3 main.py"]
+
