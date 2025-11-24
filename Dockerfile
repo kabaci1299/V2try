@@ -23,7 +23,7 @@ RUN chmod +x /app/tools/mp4decrypt || true
 
 # ✅ Upgrade pip and install Python packages
 RUN pip install --no-cache-dir --upgrade pip \
-    && pip install --no-cache-dir -r ugbots.txt \
+    && pip install --no-cache-dir -r requirements.txt \
     && pip install --no-cache-dir -U yt-dlp
 
 # ✅ Remove pyrofork if accidentally included
@@ -34,4 +34,5 @@ RUN pip install --no-cache-dir -U pyrogram==2.0.106 tgcrypto==1.2.5
 
 # ✅ Final command: start Flask + Bot together
 CMD ["sh", "-c", "gunicorn app:app & python3 main.py"]
+
 
