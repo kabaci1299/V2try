@@ -30,9 +30,10 @@ RUN pip install --no-cache-dir --upgrade pip \
 RUN pip uninstall -y pyrofork || true
 
 # ✅ Explicitly install stable Pyrogram + TgCrypto
-RUN pip install --no-cache-dir -U pyrogram==2.0.106 tgcrypto==1.2.5
-
+RUN pip install --no-cache-dir -U pyrogram==2.0.106 tgcrypto==1.2.5 
+CMD ["--port", "8000"]
 # ✅ Final command: start Flask + Bot together
 CMD ["sh", "-c", "gunicorn app:app & python3 main.py"]
+
 
 
