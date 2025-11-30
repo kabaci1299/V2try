@@ -31,9 +31,10 @@ RUN pip uninstall -y pyrofork || true
 
 # ✅ Explicitly install stable Pyrogram + TgCrypto
 RUN pip install --no-cache-dir -U pyrogram==2.0.106 tgcrypto==1.2.5 
-CMD ["--port", "8000"]
+CMD [gunicorn --bind 0.0.0.0:8080--workers 2 --timeout 120 app:app]
 # ✅ Final command: start Flask + Bot together
 CMD ["sh", "-c", "gunicorn app:app & python3 main.py"]
+
 
 
 
